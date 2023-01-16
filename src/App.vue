@@ -1,11 +1,11 @@
 <template>
   <div>
-
     <div 
       v-for="obj in todos"
       v-bind:key="obj.id"
       class="todos-item"
     >
+      <img v-bind:src="obj.imgSrc" alt="">
       {{ obj.title }}
     </div>
 
@@ -17,18 +17,21 @@ export default {
   name: 'App',
   data() {
     return {
+      imgAlt: "Foto de John Lock",
       todos: [
         {
           "userId": 1,
           "id": 1,
           "title": "delectus aut autem",
-          "completed": false
+          "completed": false,
+          "imgSrc": "https://via.placeholder.com/150/92c952",
         },
         {
           "userId": 1,
           "id": 2,
           "title": "quis ut nam facilis et officia qui",
-          "completed": false
+          "completed": false,
+          "imgSrc": "https://via.placeholder.com/150/92c952",
         },
         {
           "userId": 1,
