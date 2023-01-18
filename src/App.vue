@@ -1,74 +1,30 @@
 <template>
-  <div>
-    <div 
-      v-for="obj in todos"
-      v-bind:key="obj.id"
-      class="todos-item"
-    >
-      <img v-bind:src="obj.imgSrc" alt="">
-      {{ obj.title }}
-    </div>
-
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view/>
 </template>
-<script>
-
-export default {
-  name: 'App',
-  data() {
-    return {
-      imgAlt: "Foto de John Lock",
-      todos: [
-        {
-          "userId": 1,
-          "id": 1,
-          "title": "delectus aut autem",
-          "completed": false,
-          "imgSrc": "https://via.placeholder.com/150/92c952",
-        },
-        {
-          "userId": 1,
-          "id": 2,
-          "title": "quis ut nam facilis et officia qui",
-          "completed": false,
-          "imgSrc": "https://via.placeholder.com/150/92c952",
-        },
-        {
-          "userId": 1,
-          "id": 3,
-          "title": "fugiat veniam minus",
-          "completed": false
-        },
-        {
-          "userId": 1,
-          "id": 4,
-          "title": "et porro tempora",
-          "completed": true
-        },
-        {
-          "userId": 1,
-          "id": 5,
-          "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-          "completed": false
-        }
-      ]
-    }
-  }
-}
-</script>
 
 <style>
-.todos-item {
-  background: #000;
-  margin: 0 0 5px 0;
-  padding: 3px 6px;
-  color: #fff;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
   color: #2c3e50;
-  margin: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
